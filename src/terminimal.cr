@@ -15,9 +15,9 @@ module Terminimal
 
   # Possible direction from screen and line clearing (relative to cursor pos).
   enum ClearDirection
-    ToEnd = 0
+    ToEnd   = 0
     ToStart = 1
-    All = 3
+    All     = 3
   end
 
   # Clears the screen and resets cursor position to 0,0.
