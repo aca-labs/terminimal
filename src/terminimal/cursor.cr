@@ -72,4 +72,11 @@ class Terminimal::Cursor
     io << code
     self
   end
+
+  # Position the cursor at the specific line/column position.
+  def move_to(line : Int, column : Int)
+    raise "coordinates must be non-negative" if line < 0 || column < 0
+    io << ANSI::CURSOR_MOVE.sprintf line, column
+    self
+  end
 end
