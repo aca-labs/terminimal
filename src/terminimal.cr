@@ -1,5 +1,5 @@
-require "terminimal/ansi"
-require "terminimal/cursor"
+require "./terminimal/ansi"
+require "./terminimal/cursor"
 require "colorize"
 
 # A tiny CLI toolkit for building terminal apps for humans.
