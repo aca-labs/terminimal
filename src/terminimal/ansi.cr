@@ -7,6 +7,8 @@ module Terminimal::ANSI
   CURSOR_NEXT_LINE = "\e[E"
   CURSOR_PREV_LINE = "\e[F"
 
+  CURSOR_HORIZONTAL_ABS = "\e[%dG"
+
   CURSOR_MOVE = "\e[%d;%dH"
 
   CURSOR_POS_SAVE    = "\e[s"
@@ -14,4 +16,7 @@ module Terminimal::ANSI
 
   CURSOR_SHOW = "\e[?25h"
   CURSOR_HIDE = "\e[?25l"
+
+  CLEAR_SCREEN = "\e[%dJ"
+  CLEAR_LINE   = "\e[%dK"
 end

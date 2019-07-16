@@ -5,11 +5,11 @@ class Terminimal::Cursor
     @@instance ||= new
   end
 
-  private def initialize(@io = STDOUT)
+  private def initialize
     @hidden = false
   end
 
-  private getter io : IO
+  private getter io = Terminimal.io
 
   # Hides the cursor until instructed to re-display it with `#show` or the
   # application exits.
@@ -76,7 +76,14 @@ class Terminimal::Cursor
   # Position the cursor at the specific line/column position.
   def move_to(line : Int, column : Int)
     raise "coordinates must be non-negative" if line < 0 || column < 0
-    io << ANSI::CURSOR_MOVE.sprintf line, column
+    io << sprintf(ANSI::CURSOR_MOVE, line, column)
+    self
+  end
+
+  # Position the cursor at the specific column on the current line.
+  def move_to(column : Int)
+    raise "column must be non-negative" if column < 0
+    io << sprintf(ANSI::CURSOR_HORIZONTAL_ABS, column)
     self
   end
 
