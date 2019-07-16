@@ -40,8 +40,7 @@ module Terminimal
   end
 
   # Prints to STDERR and exits
-  def exit_with_error(message, exit_code) : NoReturn
-    STDERR.puts "#{"error:".colorize.bright.red} #{message}"
-    exit exit_code
+  def abort(message, status) : NoReturn
+    abort "#{"error:".colorize.bright.red} #{message}", status
   end
 end
