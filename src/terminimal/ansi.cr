@@ -9,6 +9,9 @@ module Terminimal::ANSI
 
   CURSOR_MOVE = "\e[%d;%dH"
 
+  CURSOR_POS_SAVE    = "\e[s"
+  CURSOR_POS_RESTORE = "\e[u"
+
   CURSOR_SHOW = "\e[?25h"
   CURSOR_HIDE = "\e[?25l"
 end

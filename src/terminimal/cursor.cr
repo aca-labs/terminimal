@@ -79,4 +79,16 @@ class Terminimal::Cursor
     io << ANSI::CURSOR_MOVE.sprintf line, column
     self
   end
+
+  # Saves the current cursor position for later recall via `#restore_position`.
+  def save_position
+    io << ANSI::CURSOR_POS_SAVE
+    self
+  end
+
+  # Restores the previously save cursor position.
+  def restore_position
+    io << ANSI::CURSOR_POS_RESTORE
+    self
+  end
 end
