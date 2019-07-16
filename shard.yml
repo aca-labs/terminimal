@@ -1,0 +1,12 @@
+name: terminimal
+version: 0.1.0
+
+authors:
+  - Kim Burgess <kim@acaprojects.com>
+
+description: |
+  A tiny CLI toolkit for building terminal apps for humans.
+
+crystal: 0.27.2
+
+license: MIT
