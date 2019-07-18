@@ -1,16 +1,34 @@
 require "./terminimal/ansi"
 require "./terminimal/cursor"
+require "./terminimal/spinner"
 require "colorize"
 
 # A tiny CLI toolkit for building terminal apps for humans.
 module Terminimal
   extend self
 
-  protected class_getter io : IO = STDOUT
+  # :nodoc:
+  def io
+    STDOUT
+  end
 
   # Returns `Terminimal::Cursor` for interaction with the TTY cursor.
   def cursor
     Terminimal::Cursor.instance
+  end
+
+  def spinner(await : Proc(Bool), style = Spinner::Style::UNI_DOTS, async = false, &message : Proc(String)) : Nil
+    spinner = Terminimal::Spinner.new await, message, style
+    if async
+      spinner.run
+    else
+      spawn spinner.run
+    end
+  end
+
+  def spinner(await : Concurrent::Future, style = Spinner::Style::UNI_DOTS, async = false, &message : Proc(String))
+    future_completed = -> { await.completed? || await.canceled? }
+    spinner future_completed, style, async, &message
   end
 
   # Possible direction from screen and line clearing (relative to cursor pos).
@@ -39,7 +57,7 @@ module Terminimal
     self
   end
 
-  # Prints to STDERR and exits
+  # Prints an error message to STDERR and exits.
   def abort(message, status) : NoReturn
     abort "#{"error:".colorize.bright.red} #{message}", status
   end

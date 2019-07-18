@@ -1,3 +1,4 @@
+require "../terminimal"
 require "./ansi"
 
 class Terminimal::Cursor
@@ -9,7 +10,7 @@ class Terminimal::Cursor
     @hidden = false
   end
 
-  private getter io = Terminimal.io
+  private getter io : IO = Terminimal.io
 
   # Hides the cursor until instructed to re-display it with `#show` or the
   # application exits.
