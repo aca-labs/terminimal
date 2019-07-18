@@ -20,9 +20,9 @@ module Terminimal
   def spinner(await : Proc(Bool), style = Spinner::Style::UNI_DOTS, async = false, &message : Proc(String)) : Nil
     spinner = Terminimal::Spinner.new await, message, style
     if async
-      spinner.run
-    else
       spawn spinner.run
+    else
+      spinner.run
     end
   end
 
