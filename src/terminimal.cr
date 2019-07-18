@@ -27,7 +27,7 @@ module Terminimal
   end
 
   def spinner(await : Concurrent::Future, style = Spinner::Style::UNI_DOTS, async = false, &message : Proc(String))
-    future_completed = -> { await.completed? || await.canceled? }
+    future_completed = ->{ await.completed? || await.canceled? }
     spinner future_completed, style, async, &message
   end
 
