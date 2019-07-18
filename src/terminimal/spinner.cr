@@ -31,7 +31,7 @@ class Terminimal::Spinner
 
   define_styles(
     # ASCII based
-    ascii_propeller: %w(/ - \ |),
+    ascii_propeller: %w(/ - \\ |),
     ascii_plus: %w(x +),
     ascii_blink: %w(o -),
     ascii_v: %w(v < ^ >),
