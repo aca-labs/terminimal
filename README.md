@@ -11,6 +11,8 @@ Terminimal is a tiny toolkit for building CLI apps in crystal-lang that are desi
 
 It provides a nice API and wrappers for ANSI escape sequences and a selection of useful tools for building simple, aesthetically pleasing output.
 
+![](demo.svg)
+
 ## Installation
 
 1. Add the dependency to your `shard.yml`:
