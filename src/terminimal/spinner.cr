@@ -2,6 +2,12 @@ require "../terminimal"
 
 # Utility for emitting single line user feedback to STDOUT while a long running
 # process is taking place.
+#
+# NOTE: at the time of writing Crystal does not support parallel operations.
+# When using a spinner to provide feedback during a long-running, CPU bound
+# operation, you must manually invoke `Fiber.yield` to allow the fiber to be
+# released and output from the spinner to be evaluated. IO bound operations
+# will automatically release while awaiting resolution.
 class Terminimal::Spinner
   alias CharSequence = Iterable(Char)
 

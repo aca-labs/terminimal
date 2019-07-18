@@ -17,6 +17,11 @@ module Terminimal
     Terminimal::Cursor.instance
   end
 
+  # Create and display a `Spinner` to provide user feedback during a long
+  # running operation.
+  #
+  # The spinner will continue to output the result of evalutation the passed
+  # block while *await* returns true.
   def spinner(await : Proc(Bool), style = Spinner::Style::UNI_DOTS, async = false, &message : Proc(String)) : Nil
     spinner = Terminimal::Spinner.new await, message, style
     if async
@@ -26,6 +31,7 @@ module Terminimal
     end
   end
 
+  # ditto
   def spinner(await : Concurrent::Future, style = Spinner::Style::UNI_DOTS, async = false, &message : Proc(String))
     future_completed = ->{ await.completed? || await.canceled? }
     spinner future_completed, style, async, &message
