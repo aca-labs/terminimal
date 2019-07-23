@@ -36,7 +36,17 @@ module Terminimal
   # ditto
   def spinner(await : Concurrent::Future, style = Spinner::Style::UNI_DOTS, async = false, &message : Proc(String))
     future_completed = ->{ await.completed? || await.canceled? }
-    spinner future_completed, style, async, &message
+    spinner(future_completed, style, async, &message)
+  end
+
+  # ditto
+  def spinner(await : Proc(Bool), style = Spinner::Style::UNI_DOTS, async = false, message = "")
+    spinner(await, style, async) { message }
+  end
+
+  # ditto
+  def spinner(await : Concurrent::Future, style = Spinner::Style::UNI_DOTS, async = false, message = "")
+    spinner(await, style, async) { message }
   end
 
   # Possible direction from screen and line clearing (relative to cursor pos).
