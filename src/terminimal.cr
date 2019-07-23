@@ -8,6 +8,8 @@ module Terminimal
   extend self
 
   # :nodoc:
+  # IO to direct all output to. Declared here so this can be overridden when
+  # running specs.
   def io
     STDOUT
   end

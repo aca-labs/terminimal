@@ -10,7 +10,12 @@ class Terminimal::Cursor
     @hidden = false
   end
 
-  private getter io : IO = Terminimal.io
+  # :nodoc:
+  # IO to direct all output to. Declared here so this can be overridden when
+  # running specs.
+  def io
+    Terminimal.io
+  end
 
   # Hides the cursor until instructed to re-display it with `#show` or the
   # application exits.

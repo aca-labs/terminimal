@@ -30,9 +30,6 @@ class Terminimal::Spinner
         end
       end
     end
-
-    # :nodoc:
-    # STYLES = {{ styles.values.map(&.map(&.chars.first)) }}
   end
 
   define_styles(
@@ -82,7 +79,13 @@ class Terminimal::Spinner
     @character_sequence = style.is_a?(Style) ? style.character_sequence.as(CharSequence) : style
   end
 
-  private getter io : IO = Terminimal.io
+  # :nodoc:
+  # IO to direct all output to. Declared here so this can be overridden when
+  # running specs.
+  def io
+    Terminimal.io
+  end
+
   private getter await : Proc(Bool)
   private getter message : Proc(String)
   private getter character_sequence : CharSequence
