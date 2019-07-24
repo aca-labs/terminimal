@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.29.0">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
+  <meta id="repository-name" content="github.com/aca-labs/terminimal">
+  <title>Terminimal - github.com/aca-labs/terminimal</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/aca-labs/terminimal/Terminimal" data-name="terminimal">
+      <a href="Terminimal.html">Terminimal</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/aca-labs/terminimal/Terminimal/ANSI" data-name="terminimal::ansi">
+      <a href="Terminimal/ANSI.html">ANSI</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/aca-labs/terminimal/Terminimal/ClearDirection" data-name="terminimal::cleardirection">
+      <a href="Terminimal/ClearDirection.html">ClearDirection</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/aca-labs/terminimal/Terminimal/Cursor" data-name="terminimal::cursor">
+      <a href="Terminimal/Cursor.html">Cursor</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/aca-labs/terminimal/Terminimal/Spinner" data-name="terminimal::spinner">
+      <a href="Terminimal/Spinner.html">Spinner</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/aca-labs/terminimal/Terminimal/Spinner/CharSequence" data-name="terminimal::spinner::charsequence">
+      <a href="Terminimal/Spinner/CharSequence.html">CharSequence</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/aca-labs/terminimal/Terminimal/Spinner/Style" data-name="terminimal::spinner::style">
+      <a href="Terminimal/Spinner/Style.html">Style</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Terminimal
+
+</h1>
+
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>A tiny CLI toolkit for building terminal apps for humans.</p>
+
+
+
+
+
+
+
+  <h2>Extended Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="Terminimal.html">Terminimal</a></li>
+  
+  </ul>
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal/ansi.cr#L2" target="_blank">
+        terminimal/ansi.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal.cr#L7" target="_blank">
+        terminimal.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#clear_line%28direction%3DClearDirection%3A%3AToEnd%29-instance-method" class="signature"><strong>#clear_line</strong>(direction = <span class="t">ClearDirection</span><span class="t">::</span><span class="t">ToEnd</span>)</a>
+        
+          <div class="summary"><p>Clears the current line in the direct specified.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clear_screen%28direction%3DClearDirection%3A%3AAll%29-instance-method" class="signature"><strong>#clear_screen</strong>(direction = <span class="t">ClearDirection</span><span class="t">::</span><span class="t">All</span>)</a>
+        
+          <div class="summary"><p>Clears the screen and resets cursor position to 0,0.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cursor-instance-method" class="signature"><strong>#cursor</strong></a>
+        
+          <div class="summary"><p>Returns <code><a href="Terminimal/Cursor.html">Terminimal::Cursor</a></code> for interaction with the TTY cursor.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#exit_with_error%28message%2Cstatus%29%3ANoReturn-instance-method" class="signature"><strong>#exit_with_error</strong>(message, status) : NoReturn</a>
+        
+          <div class="summary"><p>Prints an error message to STDERR and exits.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reset_line-instance-method" class="signature"><strong>#reset_line</strong></a>
+        
+          <div class="summary"><p>Clears the current line a respositions the cursor at column 0.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#spinner%28await%3AProc%28Bool%29%2Cstyle%3DSpinner%3A%3AStyle%3A%3AUNI_DOTS%2Casync%3Dfalse%2C%26message%3AProc%28String%29%29%3ANil-instance-method" class="signature"><strong>#spinner</strong>(await : Proc(Bool), style = <span class="t">Spinner</span><span class="t">::</span><span class="t">Style</span><span class="t">::</span><span class="t">UNI_DOTS</span>, async = <span class="n">false</span>, &message : Proc(String)) : Nil</a>
+        
+          <div class="summary"><p>Create and display a <code><a href="Terminimal/Spinner.html">Spinner</a></code> to provide user feedback during a long running operation.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#spinner%28await%3AConcurrent%3A%3AFuture%2Cstyle%3DSpinner%3A%3AStyle%3A%3AUNI_DOTS%2Casync%3Dfalse%2C%26message%3AProc%28String%29%29-instance-method" class="signature"><strong>#spinner</strong>(await : Concurrent::Future, style = <span class="t">Spinner</span><span class="t">::</span><span class="t">Style</span><span class="t">::</span><span class="t">UNI_DOTS</span>, async = <span class="n">false</span>, &message : Proc(String))</a>
+        
+          <div class="summary"><p>Create and display a <code><a href="Terminimal/Spinner.html">Spinner</a></code> to provide user feedback during a long running operation.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#spinner%28await%3AProc%28Bool%29%2Cstyle%3DSpinner%3A%3AStyle%3A%3AUNI_DOTS%2Casync%3Dfalse%2Cmessage%3D%26quot%3B%26quot%3B%29-instance-method" class="signature"><strong>#spinner</strong>(await : Proc(Bool), style = <span class="t">Spinner</span><span class="t">::</span><span class="t">Style</span><span class="t">::</span><span class="t">UNI_DOTS</span>, async = <span class="n">false</span>, message = <span class="s">&quot;&quot;</span>)</a>
+        
+          <div class="summary"><p>Create and display a <code><a href="Terminimal/Spinner.html">Spinner</a></code> to provide user feedback during a long running operation.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#spinner%28await%3AConcurrent%3A%3AFuture%2Cstyle%3DSpinner%3A%3AStyle%3A%3AUNI_DOTS%2Casync%3Dfalse%2Cmessage%3D%26quot%3B%26quot%3B%29-instance-method" class="signature"><strong>#spinner</strong>(await : Concurrent::Future, style = <span class="t">Spinner</span><span class="t">::</span><span class="t">Style</span><span class="t">::</span><span class="t">UNI_DOTS</span>, async = <span class="n">false</span>, message = <span class="s">&quot;&quot;</span>)</a>
+        
+          <div class="summary"><p>Create and display a <code><a href="Terminimal/Spinner.html">Spinner</a></code> to provide user feedback during a long running operation.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="clear_line(direction=ClearDirection::ToEnd)-instance-method">
+      <div class="signature">
+        
+        def <strong>clear_line</strong>(direction = <span class="t">ClearDirection</span><span class="t">::</span><span class="t">ToEnd</span>)
+
+        <a class="method-permalink" href="#clear_line%28direction%3DClearDirection%3A%3AToEnd%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Clears the current line in the direct specified.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal.cr#L66" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clear_screen(direction=ClearDirection::All)-instance-method">
+      <div class="signature">
+        
+        def <strong>clear_screen</strong>(direction = <span class="t">ClearDirection</span><span class="t">::</span><span class="t">All</span>)
+
+        <a class="method-permalink" href="#clear_screen%28direction%3DClearDirection%3A%3AAll%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Clears the screen and resets cursor position to 0,0.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal.cr#L60" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cursor-instance-method">
+      <div class="signature">
+        
+        def <strong>cursor</strong>
+
+        <a class="method-permalink" href="#cursor-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <code><a href="Terminimal/Cursor.html">Terminimal::Cursor</a></code> for interaction with the TTY cursor.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="exit_with_error(message,status):NoReturn-instance-method">
+      <div class="signature">
+        
+        def <strong>exit_with_error</strong>(message, status) : NoReturn
+
+        <a class="method-permalink" href="#exit_with_error%28message%2Cstatus%29%3ANoReturn-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Prints an error message to STDERR and exits.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal.cr#L79" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reset_line-instance-method">
+      <div class="signature">
+        
+        def <strong>reset_line</strong>
+
+        <a class="method-permalink" href="#reset_line-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Clears the current line a respositions the cursor at column 0.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal.cr#L72" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="spinner(await:Proc(Bool),style=Spinner::Style::UNI_DOTS,async=false,&amp;message:Proc(String)):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>spinner</strong>(await : Proc(Bool), style = <span class="t">Spinner</span><span class="t">::</span><span class="t">Style</span><span class="t">::</span><span class="t">UNI_DOTS</span>, async = <span class="n">false</span>, &message : Proc(String)) : Nil
+
+        <a class="method-permalink" href="#spinner%28await%3AProc%28Bool%29%2Cstyle%3DSpinner%3A%3AStyle%3A%3AUNI_DOTS%2Casync%3Dfalse%2C%26message%3AProc%28String%29%29%3ANil-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Create and display a <code><a href="Terminimal/Spinner.html">Spinner</a></code> to provide user feedback during a long
+running operation.</p>
+
+<p>The spinner will continue to output the result of evalutation the passed
+block while <em>await</em> returns true.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="spinner(await:Concurrent::Future,style=Spinner::Style::UNI_DOTS,async=false,&amp;message:Proc(String))-instance-method">
+      <div class="signature">
+        
+        def <strong>spinner</strong>(await : Concurrent::Future, style = <span class="t">Spinner</span><span class="t">::</span><span class="t">Style</span><span class="t">::</span><span class="t">UNI_DOTS</span>, async = <span class="n">false</span>, &message : Proc(String))
+
+        <a class="method-permalink" href="#spinner%28await%3AConcurrent%3A%3AFuture%2Cstyle%3DSpinner%3A%3AStyle%3A%3AUNI_DOTS%2Casync%3Dfalse%2C%26message%3AProc%28String%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Create and display a <code><a href="Terminimal/Spinner.html">Spinner</a></code> to provide user feedback during a long
+running operation.</p>
+
+<p>The spinner will continue to output the result of evalutation the passed
+block while <em>await</em> returns true.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="spinner(await:Proc(Bool),style=Spinner::Style::UNI_DOTS,async=false,message=&amp;quot;&amp;quot;)-instance-method">
+      <div class="signature">
+        
+        def <strong>spinner</strong>(await : Proc(Bool), style = <span class="t">Spinner</span><span class="t">::</span><span class="t">Style</span><span class="t">::</span><span class="t">UNI_DOTS</span>, async = <span class="n">false</span>, message = <span class="s">&quot;&quot;</span>)
+
+        <a class="method-permalink" href="#spinner%28await%3AProc%28Bool%29%2Cstyle%3DSpinner%3A%3AStyle%3A%3AUNI_DOTS%2Casync%3Dfalse%2Cmessage%3D%26quot%3B%26quot%3B%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Create and display a <code><a href="Terminimal/Spinner.html">Spinner</a></code> to provide user feedback during a long
+running operation.</p>
+
+<p>The spinner will continue to output the result of evalutation the passed
+block while <em>await</em> returns true.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal.cr#L43" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="spinner(await:Concurrent::Future,style=Spinner::Style::UNI_DOTS,async=false,message=&amp;quot;&amp;quot;)-instance-method">
+      <div class="signature">
+        
+        def <strong>spinner</strong>(await : Concurrent::Future, style = <span class="t">Spinner</span><span class="t">::</span><span class="t">Style</span><span class="t">::</span><span class="t">UNI_DOTS</span>, async = <span class="n">false</span>, message = <span class="s">&quot;&quot;</span>)
+
+        <a class="method-permalink" href="#spinner%28await%3AConcurrent%3A%3AFuture%2Cstyle%3DSpinner%3A%3AStyle%3A%3AUNI_DOTS%2Casync%3Dfalse%2Cmessage%3D%26quot%3B%26quot%3B%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Create and display a <code><a href="Terminimal/Spinner.html">Spinner</a></code> to provide user feedback during a long
+running operation.</p>
+
+<p>The spinner will continue to output the result of evalutation the passed
+block while <em>await</em> returns true.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

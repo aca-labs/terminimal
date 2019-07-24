@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.29.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/aca-labs/terminimal">
+  <title>Terminimal::Cursor - github.com/aca-labs/terminimal</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/aca-labs/terminimal/Terminimal" data-name="terminimal">
+      <a href="../Terminimal.html">Terminimal</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/aca-labs/terminimal/Terminimal/ANSI" data-name="terminimal::ansi">
+      <a href="../Terminimal/ANSI.html">ANSI</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/aca-labs/terminimal/Terminimal/ClearDirection" data-name="terminimal::cleardirection">
+      <a href="../Terminimal/ClearDirection.html">ClearDirection</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/aca-labs/terminimal/Terminimal/Cursor" data-name="terminimal::cursor">
+      <a href="../Terminimal/Cursor.html">Cursor</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/aca-labs/terminimal/Terminimal/Spinner" data-name="terminimal::spinner">
+      <a href="../Terminimal/Spinner.html">Spinner</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/aca-labs/terminimal/Terminimal/Spinner/CharSequence" data-name="terminimal::spinner::charsequence">
+      <a href="../Terminimal/Spinner/CharSequence.html">CharSequence</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/aca-labs/terminimal/Terminimal/Spinner/Style" data-name="terminimal::spinner::style">
+      <a href="../Terminimal/Spinner/Style.html">Style</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Terminimal::Cursor
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Terminimal/Cursor.html">Terminimal::Cursor</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal/cursor.cr#L4" target="_blank">
+        terminimal/cursor.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#instance%3Aself-class-method" class="signature"><strong>.instance</strong> : <span class="k">self</span></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#hidden%3F%3ABool-instance-method" class="signature"><strong>#hidden?</strong> : Bool</a>
+        
+          <div class="summary"><p>Get the last known cursor visibility.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hide-instance-method" class="signature"><strong>#hide</strong></a>
+        
+          <div class="summary"><p>Hides the cursor until instructed to re-display it with <code><a href="../Terminimal/Cursor.html#show-instance-method">#show</a></code> or the application exits.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hide%21-instance-method" class="signature"><strong>#hide!</strong></a>
+        
+          <div class="summary"><p>Hides the current cursor position.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#move%28direction%2Ccells%3D1%29-instance-method" class="signature"><strong>#move</strong>(direction, cells = <span class="n">1</span>)</a>
+        
+          <div class="summary"><p>Move the cursor position <em>cells</em> spots in <em>direction</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#move_to%28line%3AInt%2Ccolumn%3AInt%29-instance-method" class="signature"><strong>#move_to</strong>(line : Int, column : Int)</a>
+        
+          <div class="summary"><p>Position the cursor at the specific line/column position.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#move_to%28column%3AInt%29-instance-method" class="signature"><strong>#move_to</strong>(column : Int)</a>
+        
+          <div class="summary"><p>Position the cursor at the specific column on the current line.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#restore_position-instance-method" class="signature"><strong>#restore_position</strong></a>
+        
+          <div class="summary"><p>Restores the previously save cursor position.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#save_position-instance-method" class="signature"><strong>#save_position</strong></a>
+        
+          <div class="summary"><p>Saves the current cursor position for later recall via <code><a href="../Terminimal/Cursor.html#restore_position-instance-method">#restore_position</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#show-instance-method" class="signature"><strong>#show</strong></a>
+        
+          <div class="summary"><p>Show the cursor.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="instance:self-class-method">
+      <div class="signature">
+        
+        def self.<strong>instance</strong> : <span class="k">self</span>
+
+        <a class="method-permalink" href="#instance%3Aself-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal/cursor.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="hidden?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>hidden?</strong> : Bool
+
+        <a class="method-permalink" href="#hidden%3F%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Get the last known cursor visibility.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal/cursor.cr#L49" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hide-instance-method">
+      <div class="signature">
+        
+        def <strong>hide</strong>
+
+        <a class="method-permalink" href="#hide-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Hides the cursor until instructed to re-display it with <code><a href="../Terminimal/Cursor.html#show-instance-method">#show</a></code> or the
+application exits.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal/cursor.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hide!-instance-method">
+      <div class="signature">
+        
+        def <strong>hide!</strong>
+
+        <a class="method-permalink" href="#hide%21-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Hides the current cursor position.</p>
+
+<p>Using the method directly is not recommended, however if you do, it is
+important to ensure you call <code><a href="../Terminimal/Cursor.html#show-instance-method">#show</a></code> prior to exiting.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal/cursor.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="move(direction,cells=1)-instance-method">
+      <div class="signature">
+        
+        def <strong>move</strong>(direction, cells = <span class="n">1</span>)
+
+        <a class="method-permalink" href="#move%28direction%2Ccells%3D1%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Move the cursor position <em>cells</em> spots in <em>direction</em>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal/cursor.cr#L54" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="move_to(line:Int,column:Int)-instance-method">
+      <div class="signature">
+        
+        def <strong>move_to</strong>(line : Int, column : Int)
+
+        <a class="method-permalink" href="#move_to%28line%3AInt%2Ccolumn%3AInt%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Position the cursor at the specific line/column position.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal/cursor.cr#L83" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="move_to(column:Int)-instance-method">
+      <div class="signature">
+        
+        def <strong>move_to</strong>(column : Int)
+
+        <a class="method-permalink" href="#move_to%28column%3AInt%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Position the cursor at the specific column on the current line.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal/cursor.cr#L90" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="restore_position-instance-method">
+      <div class="signature">
+        
+        def <strong>restore_position</strong>
+
+        <a class="method-permalink" href="#restore_position-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Restores the previously save cursor position.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal/cursor.cr#L103" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="save_position-instance-method">
+      <div class="signature">
+        
+        def <strong>save_position</strong>
+
+        <a class="method-permalink" href="#save_position-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Saves the current cursor position for later recall via <code><a href="../Terminimal/Cursor.html#restore_position-instance-method">#restore_position</a></code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal/cursor.cr#L97" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="show-instance-method">
+      <div class="signature">
+        
+        def <strong>show</strong>
+
+        <a class="method-permalink" href="#show-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Show the cursor.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/aca-labs/terminimal/blob/79f6b1ec1ef32eccc034cd75fc6b5afd5da9d1ef/src/terminimal/cursor.cr#L42" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
