@@ -7,6 +7,8 @@ authors:
 description: |
   A tiny CLI toolkit for building terminal apps for humans.
 
-crystal: 1.13.1
-
 license: MIT
+
+dependencies:
+  future:
+    github: crystal-community/future.cr

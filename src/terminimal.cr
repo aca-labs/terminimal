@@ -2,6 +2,7 @@ require "./terminimal/ansi"
 require "./terminimal/cursor"
 require "./terminimal/spinner"
 require "colorize"
+require "future"
 
 # A tiny CLI toolkit for building terminal apps for humans.
 module Terminimal
