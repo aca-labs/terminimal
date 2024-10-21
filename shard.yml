@@ -7,6 +7,6 @@ authors:
 description: |
   A tiny CLI toolkit for building terminal apps for humans.
 
-crystal: 0.27.2
+crystal: 1.13.1
 
 license: MIT
