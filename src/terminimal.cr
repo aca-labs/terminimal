@@ -35,7 +35,7 @@ module Terminimal
   end
 
   # ditto
-  def spinner(await : Future, style = Spinner::Style::UNI_DOTS, async = false, &message : Proc(String))
+  def spinner(await : Future::Compute, style = Spinner::Style::UNI_DOTS, async = false, &message : Proc(String))
     future_completed = ->{ await.completed? || await.canceled? }
     spinner(future_completed, style, async, &message)
   end
@@ -46,7 +46,7 @@ module Terminimal
   end
 
   # ditto
-  def spinner(await : Future, style = Spinner::Style::UNI_DOTS, async = false, message = "")
+  def spinner(await : Future::Compute, style = Spinner::Style::UNI_DOTS, async = false, message = "")
     spinner(await, style, async) { message }
   end
 
