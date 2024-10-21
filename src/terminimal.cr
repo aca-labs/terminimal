@@ -35,14 +35,7 @@ module Terminimal
 
   # ditto
   def spinner(await : Channel, style = Spinner::Style::UNI_DOTS, async = false, &message : Proc(String))
-    channel_completed = ->{ 
-      begin
-        await.receive
-        true
-      rescue Channel::ClosedError
-        false
-      end
-    }
+    channel_completed = ->{ await.completed? || await.canceled? }
     spinner(channel_completed, style, async, &message)
   end
 
